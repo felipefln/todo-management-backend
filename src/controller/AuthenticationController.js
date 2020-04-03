@@ -7,7 +7,7 @@ const { createAccessToken,
 
 module.exports = {
     async create(request, response) {
-        const { email, password } = request.body;
+        const { author, email, password } = request.body;
 
         try {
             const user = localDB.find(user => user.email === email);
@@ -17,14 +17,15 @@ module.exports = {
 
             localDB.push({
                 id: localDB.length,
+                author,
                 email,
-                password: hashedPassword
+                password: hashedPassword,
             })
 
             response.send({
                 message: 'User created'
             })
-            console.log(localDB)
+
         } catch (err) {
             response.send({
                 error: `${err.message}`,
@@ -49,6 +50,9 @@ module.exports = {
 
             sendRefreshToken(response, refreshtoken);
             sendAccessToken(response, request, accesstoken);
+
+
+            return accesstoken
         } catch (err) {
             response.send({
                 error: `${err.message}`,

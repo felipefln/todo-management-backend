@@ -9,7 +9,7 @@ module.exports = {
     },
 
     async create(request, response) {
-        const { name, description, datestart, dateend, observation } = request.body;
+        const { name, description, datestart, dateend } = request.body;
 
         const id = generateUniqueId();
 
@@ -22,7 +22,7 @@ module.exports = {
         })
 
 
-        return response.json({ id, name, description })
+        return response.json({ id, name, description, datestart, dateend })
     },
 
     async delete(request, response) {
