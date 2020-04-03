@@ -23,11 +23,11 @@ Todo Management
 <step-by-step>
 
 **Example run Backend:**
-<!-- 1. Clone your repository `git clone git@github.com:felipefln/SemanaOmnistack11.git`
+1. Clone your repository `https://github.com/felipefln/todo-management-backend.git`
 2. Go to the dir: `cd backend`
 3. Install dependen: `yarn install` || `npm install`
 4. Run the script: `yarn dev` || `npm start`
-5. Now it's running on [http://localhost:3333](http://localhost:3333) -->
+5. Now it's running on [http://localhost:3333](http://localhost:3333)
 
 
 ### How to build for a deploy
